@@ -5,6 +5,8 @@ using Microsoft.Extensions.Logging;
 namespace FinansApp
 {
     public static class MauiProgram
+
+
     {
         public static MauiApp CreateMauiApp()
         {
