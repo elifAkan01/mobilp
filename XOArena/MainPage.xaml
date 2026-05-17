@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XOArena.MainPage"
+             BackgroundColor="#F0F4F8"
+             NavigationPage.HasNavigationBar="False">
+
+	<Grid>
+		<Ellipse WidthRequest="500" HeightRequest="500" Fill="#D1E9FF" VerticalOptions="Start" HorizontalOptions="End" Margin="0,-200,-200,0"/>
+
+		<ScrollView>
+			<VerticalStackLayout Padding="35" Spacing="35" VerticalOptions="Center">
+
+				<VerticalStackLayout Spacing="0" HorizontalOptions="Center">
+					<Label Text="XO" FontSize="110" FontAttributes="Bold" TextColor="#1E293B" HorizontalOptions="Center" />
+					<Label Text="ARENA" FontSize="18" CharacterSpacing="10" TextColor="#3B82F6" HorizontalOptions="Center" Margin="0,-25,0,0" FontAttributes="Bold"/>
+				</VerticalStackLayout>
+
+				<Frame CornerRadius="35" Padding="30" BackgroundColor="White" BorderColor="#E2E8F0" HasShadow="True" Shadow="{Shadow Brush=#64748B, Offset='0,10', Opacity=0.1, Radius=30}">
+					<VerticalStackLayout Spacing="25">
+
+						<VerticalStackLayout Spacing="10">
+							<Label Text="OYUN MODU" FontSize="12" FontAttributes="Bold" TextColor="#64748B" HorizontalOptions="Center"/>
+							<Frame CornerRadius="18" Padding="15,2" BackgroundColor="#F8FAFC" BorderColor="#CBD5E1" HasShadow="False">
+								<Picker x:Name="modePicker" Title="Seçiniz" TextColor="#1E293B" SelectedIndexChanged="modePicker_SelectedIndexChanged">
+									<Picker.Items>
+										<x:String>İki Oyunculu</x:String>
+										<x:String>Bilgisayara Karşı</x:String>
+									</Picker.Items>
+								</Picker>
+							</Frame>
+						</VerticalStackLayout>
+
+						<Entry x:Name="playerXEntry" Placeholder="Birinci Oyuncu" PlaceholderColor="#94A3B8" TextColor="#1E293B" HeightRequest="65" BackgroundColor="#F8FAFC" />
+
+						<Frame x:Name="playerOFrame" Padding="0" BackgroundColor="Transparent" BorderColor="Transparent" HasShadow="False">
+							<Entry x:Name="playerOEntry" Placeholder="İkinci Oyuncu" PlaceholderColor="#94A3B8" TextColor="#1E293B" HeightRequest="65" BackgroundColor="#F8FAFC"/>
+						</Frame>
+
+						<Button Text="OYUNU BAŞLAT" Clicked="StartGame_Clicked" HeightRequest="75" CornerRadius="22"
+                                FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="#2563EB" />
+
+						<Label x:Name="infoLabel" Text="Hazır" TextColor="#10B981" HorizontalOptions="Center" FontSize="12" FontAttributes="Bold" />
+					</VerticalStackLayout>
+				</Frame>
+			</VerticalStackLayout>
+		</ScrollView>
+	</Grid>
+</ContentPage>

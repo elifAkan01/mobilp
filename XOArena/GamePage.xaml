@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XOArena.GamePage"
+             BackgroundColor="#F1F5F9"
+             Title="Arena">
+
+    <VerticalStackLayout Padding="25" Spacing="25" VerticalOptions="Center">
+
+        <Frame BackgroundColor="White" BorderColor="#E2E8F0" CornerRadius="25" Padding="20" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <Label x:Name="turnLabel" Text="SIRA SİZDE" FontSize="24" FontAttributes="Bold" TextColor="#1E293B" HorizontalOptions="Center" />
+                <Grid ColumnDefinitions="*,*,*" HorizontalOptions="Fill">
+                    <Label x:Name="xScoreLabel" Grid.Column="0" Text="0" TextColor="#2563EB" FontAttributes="Bold" HorizontalOptions="Center" FontSize="22"/>
+                    <Label x:Name="drawScoreLabel" Grid.Column="1" Text="0" TextColor="#64748B" FontAttributes="Bold" HorizontalOptions="Center" FontSize="22"/>
+                    <Label x:Name="oScoreLabel" Grid.Column="2" Text="0" TextColor="#F43F5E" FontAttributes="Bold" HorizontalOptions="Center" FontSize="22"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Grid x:Name="GameGrid" ColumnDefinitions="95,95,95" RowDefinitions="95,95,95" HorizontalOptions="Center" ColumnSpacing="15" RowSpacing="15">
+            <Button x:Name="btn0" Grid.Row="0" Grid.Column="0" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn1" Grid.Row="0" Grid.Column="1" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn2" Grid.Row="0" Grid.Column="2" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn3" Grid.Row="1" Grid.Column="0" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn4" Grid.Row="1" Grid.Column="1" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn5" Grid.Row="1" Grid.Column="2" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn6" Grid.Row="2" Grid.Column="0" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn7" Grid.Row="2" Grid.Column="1" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+            <Button x:Name="btn8" Grid.Row="2" Grid.Column="2" Clicked="Cell_Clicked" BackgroundColor="White" FontSize="40" CornerRadius="20" BorderColor="#CBD5E1" BorderWidth="2"/>
+        </Grid>
+
+        <Button Text="OYUNU SIFIRLA" Clicked="Reset_Clicked" BackgroundColor="Transparent" BorderColor="#94A3B8" BorderWidth="1" TextColor="#64748B" FontAttributes="Bold" CornerRadius="18" HeightRequest="60" />
+
+    </VerticalStackLayout>
+</ContentPage>

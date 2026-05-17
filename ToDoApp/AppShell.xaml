@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ToDoApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ToDoApp"
+    x:DataType="local:AppShell"
+    FlyoutBehavior="Flyout"
+    Title="ToDoApp">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="120" BackgroundColor="#1E293B">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="ToDoApp"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White" />
+                <Label Text="Görevlerini yönet"
+                       FontSize="12"
+                       TextColor="#CBD5E1" />
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Görevler">
+        <FlyoutItem.Icon>
+            <FontImageSource Glyph="📋" Size="20" />
+        </FlyoutItem.Icon>
+
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Tamamlanan Görevler"
+              Command="{Binding GoToCompletedCommand}">
+        <MenuItem.IconImageSource>
+            <FontImageSource Glyph="✅" Size="20" />
+        </MenuItem.IconImageSource>
+    </MenuItem>
+
+    <MenuItem Text="Süresi Geçmiş"
+              Command="{Binding GoToOverdueCommand}">
+        <MenuItem.IconImageSource>
+            <FontImageSource Glyph="⏰" Size="20" />
+        </MenuItem.IconImageSource>
+    </MenuItem>
+
+    <MenuItem Text="Yeni Görev Ekle"
+              Command="{Binding AddNewTaskCommand}">
+        <MenuItem.IconImageSource>
+            <FontImageSource Glyph="➕" Size="20" />
+        </MenuItem.IconImageSource>
+    </MenuItem>
+
+</Shell>

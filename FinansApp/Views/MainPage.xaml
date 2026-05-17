@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FinansApp.Model"
+             xmlns:conv="clr-namespace:FinansApp.Converters"
+             x:Class="FinansApp.Views.MainPage"
+             Title="Finans Takip"
+             BackgroundColor="{AppThemeBinding Light=#F7F7FB, Dark=#1C1C1E}">
+
+    <ContentPage.Resources>
+        <conv:IncomeToColorConverter x:Key="ColorConv" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
+
+        <VerticalStackLayout Grid.Row="0" Padding="20,20,20,0" Spacing="12">
+
+            <Border BackgroundColor="#512BD4"
+                    StrokeThickness="0"
+                    Padding="20"
+                    StrokeShape="RoundRectangle 20">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Toplam Bakiye"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="BalanceLabel"
+                           Text="₺0,00"
+                           FontSize="34"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="BalanceStatusLabel"
+                           Text="Henüz işlem yok"
+                           TextColor="#EDE7FF"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1"
+              Padding="20,12,20,0"
+              ColumnDefinitions="*,*"
+              ColumnSpacing="12">
+
+            <Border Grid.Column="0"
+                    BackgroundColor="#E8F8EC"
+                    StrokeThickness="0"
+                    Padding="14"
+                    StrokeShape="RoundRectangle 16">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Toplam Gelir"
+                           FontAttributes="Bold"
+                           TextColor="#1E7D32" />
+                    <Label x:Name="IncomeLabel"
+                           Text="₺0,00"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#1E7D32" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Column="1"
+                    BackgroundColor="#FDECEC"
+                    StrokeThickness="0"
+                    Padding="14"
+                    StrokeShape="RoundRectangle 16">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Toplam Gider"
+                           FontAttributes="Bold"
+                           TextColor="#C62828" />
+                    <Label x:Name="ExpenseLabel"
+                           Text="₺0,00"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#C62828" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+
+        <SearchBar Grid.Row="2"
+                   x:Name="SearchBox"
+                   Margin="20,15,20,10"
+                   Placeholder="Açıklama veya kategori ara..."
+                   TextChanged="OnSearchTextChanged" />
+
+        <CollectionView Grid.Row="3"
+                        x:Name="FinanceList"
+                        Margin="10,0,10,0"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="30" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Henüz işlem yok"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+                    <Label Text="Sağ alttaki + butonundan ilk işlemini ekleyebilirsin."
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:Transaction">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Sil"
+                                           BackgroundColor="Red"
+                                           Invoked="OnDelete"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Border Margin="10,6"
+                                Padding="14"
+                                BackgroundColor="{AppThemeBinding Light=White, Dark=#2C2C2E}"
+                                Stroke="#E6E6E6"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 16">
+
+                            <Grid ColumnDefinitions="*,Auto">
+                                <VerticalStackLayout Spacing="4">
+                                    <Label Text="{Binding Description}"
+                                           FontSize="17"
+                                           FontAttributes="Bold" />
+
+                                    <Label Text="{Binding Category}"
+                                           FontSize="13"
+                                           TextColor="#7A7A7A" />
+
+                                    <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"
+                                           FontSize="12"
+                                           TextColor="Gray" />
+                                </VerticalStackLayout>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding Amount, StringFormat='{0:N2} ₺'}"
+                                       TextColor="{Binding IsIncome, Converter={StaticResource ColorConv}}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" />
+                            </Grid>
+                        </Border>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="4"
+                Text="+"
+                FontSize="30"
+                WidthRequest="70"
+                HeightRequest="70"
+                CornerRadius="35"
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="0,0,20,20"
+                Clicked="OnAddClicked" />
+    </Grid>
+</ContentPage>

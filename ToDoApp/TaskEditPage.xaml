@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ToDoApp.TaskEditPage"
+    Title="Görev Detayı"
+    BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Kaydet" Clicked="OnSaveClicked" />
+        <ToolbarItem Text="Vazgeç" Clicked="OnCancelClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Label Text="Yeni Görev"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource TextColor}" />
+
+            <Border BackgroundColor="{StaticResource CardBackgroundColor}"
+                    Stroke="{StaticResource BorderColor}"
+                    StrokeThickness="1"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="Görev Adı"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           FontSize="14" />
+
+                    <Entry x:Name="TitleEntry"
+                           Placeholder="Görev adını gir"
+                           TextColor="{StaticResource TextColor}"
+                           PlaceholderColor="{StaticResource SecondaryTextColor}"
+                           BackgroundColor="{StaticResource EntryBackgroundColor}" />
+
+                    <Label Text="Kategori"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           FontSize="14" />
+
+                    <Picker x:Name="CategoryPicker"
+                            Title="Kategori Seçin"
+                            TitleColor="{StaticResource SecondaryTextColor}"
+                            TextColor="{StaticResource TextColor}"
+                            BackgroundColor="{StaticResource EntryBackgroundColor}">
+                        <Picker.Items>
+                            <x:String>İş</x:String>
+                            <x:String>Kişisel</x:String>
+                            <x:String>Acil</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label Text="Son Tarih"
+                           TextColor="{StaticResource SecondaryTextColor}"
+                           FontSize="14" />
+
+                    <DatePicker x:Name="DueDatePicker"
+                                TextColor="{StaticResource TextColor}"
+                                BackgroundColor="{StaticResource EntryBackgroundColor}" />
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox x:Name="CompletedCheckBox"
+                                  Color="{StaticResource PrimaryColor}" />
+                        <Label Text="Tamamlandı"
+                               VerticalOptions="Center"
+                               TextColor="{StaticResource TextColor}" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Kaydet"
+                    Clicked="OnSaveClicked"
+                    BackgroundColor="{StaticResource PrimaryColor}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    CornerRadius="16"
+                    HeightRequest="52" />
+
+            <Button x:Name="DeleteButton"
+                    Text="Sil"
+                    Clicked="OnDeleteClicked"
+                    BackgroundColor="{StaticResource DangerColor}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    CornerRadius="16"
+                    HeightRequest="52"
+                    IsVisible="False" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

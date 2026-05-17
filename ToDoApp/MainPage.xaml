@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ToDoApp.Models"
+             x:Class="ToDoApp.MainPage"
+             Title="Görev Listesi"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="12">
+
+        <Label Text="Görevlerim"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="{StaticResource TextColor}"
+               Margin="4,0,0,12" />
+
+        <Grid Grid.Row="1">
+            <CollectionView x:Name="TasksCollection" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ToDo">
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal"
+                                            SwipeBehaviorOnInvoked="Close">
+                                    <SwipeItem Text="Düzenle"
+                                               BackgroundColor="{StaticResource PrimaryColor}"
+                                               Invoked="OnEditInvoked"
+                                               CommandParameter="{Binding .}" />
+                                    <SwipeItem Text="Sil"
+                                               BackgroundColor="{StaticResource DangerColor}"
+                                               Invoked="OnDeleteInvoked"
+                                               CommandParameter="{Binding .}" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Border Margin="0,6"
+                                    Padding="14"
+                                    BackgroundColor="{StaticResource CardBackgroundColor}"
+                                    Stroke="{StaticResource BorderColor}"
+                                    StrokeThickness="1">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="16" />
+                                </Border.StrokeShape>
+
+                                <HorizontalStackLayout Spacing="12">
+
+                                    <CheckBox IsChecked="{Binding IsCompleted}"
+                                              CheckedChanged="OnTaskCompletedChanged"
+                                              Color="{StaticResource PrimaryColor}"
+                                              VerticalOptions="Start" />
+
+                                    <VerticalStackLayout Spacing="8">
+
+                                        <Label Text="{Binding Title}"
+                                               FontSize="20"
+                                               FontAttributes="Bold"
+                                               TextColor="{StaticResource TextColor}" />
+
+                                        <HorizontalStackLayout Spacing="8">
+
+                                            <Border Padding="10,4"
+                                                    BackgroundColor="{StaticResource PrimaryColor}"
+                                                    StrokeThickness="0">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="12" />
+                                                </Border.StrokeShape>
+                                                <Label Text="{Binding Category}"
+                                                       FontSize="12"
+                                                       TextColor="White" />
+                                            </Border>
+
+                                            <Border Padding="10,4"
+                                                    StrokeThickness="0">
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="12" />
+                                                </Border.StrokeShape>
+
+                                                <Border.Triggers>
+                                                    <DataTrigger TargetType="Border"
+                                                                 Binding="{Binding IsCompleted}"
+                                                                 Value="True">
+                                                        <Setter Property="BackgroundColor"
+                                                                Value="{StaticResource SuccessColor}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Border"
+                                                                 Binding="{Binding IsCompleted}"
+                                                                 Value="False">
+                                                        <Setter Property="BackgroundColor"
+                                                                Value="{StaticResource DangerColor}" />
+                                                    </DataTrigger>
+                                                </Border.Triggers>
+
+                                                <Label FontSize="12"
+                                                       TextColor="White">
+                                                    <Label.Triggers>
+                                                        <DataTrigger TargetType="Label"
+                                                                     Binding="{Binding IsCompleted}"
+                                                                     Value="True">
+                                                            <Setter Property="Text" Value="Tamamlandı" />
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Label"
+                                                                     Binding="{Binding IsCompleted}"
+                                                                     Value="False">
+                                                            <Setter Property="Text" Value="Aktif" />
+                                                        </DataTrigger>
+                                                    </Label.Triggers>
+                                                </Label>
+                                            </Border>
+
+                                        </HorizontalStackLayout>
+
+                                        <Label Text="{Binding DueDate, StringFormat='Son Tarih: {0:dd.MM.yyyy}'}"
+                                               FontSize="14"
+                                               TextColor="{StaticResource SecondaryTextColor}" />
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Border>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <VerticalStackLayout x:Name="EmptyStateLayout"
+                                 IsVisible="False"
+                                 Spacing="10"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+                <Label Text="📝"
+                       FontSize="50"
+                       HorizontalOptions="Center" />
+                <Label Text="Henüz görev yok"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TextColor}"
+                       HorizontalOptions="Center" />
+                <Label Text="Yeni bir görev ekleyerek başlayabilirsin."
+                       FontSize="14"
+                       TextColor="{StaticResource SecondaryTextColor}"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <Button Grid.Row="2"
+                Text="+ Görev Ekle"
+                Clicked="OnAddButtonClicked"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                TextColor="White"
+                CornerRadius="18"
+                HeightRequest="55"
+                FontSize="18"
+                FontAttributes="Bold"
+                Margin="0,14,0,0" />
+    </Grid>
+</ContentPage>

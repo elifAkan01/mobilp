@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FinansApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FinansApp.Views"
+    FlyoutBehavior="Flyout"
+    Title="FinansApp">
+
+    <FlyoutItem Title="Genel Bakış">
+        <ShellContent
+            Title="Finans Takip"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <MenuItem Text="Gelir Ekle" Command="{Binding AddIncomeCommand}" />
+    <MenuItem Text="Gider Ekle" Command="{Binding AddExpenseCommand}" />
+</Shell>

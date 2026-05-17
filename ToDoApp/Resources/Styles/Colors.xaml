@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Mevcut MAUI renk anahtarları -->
+    <Color x:Key="Primary">#3B82F6</Color>
+    <Color x:Key="PrimaryDarkText">#F8FAFC</Color>
+    <Color x:Key="Secondary">#60A5FA</Color>
+    <Color x:Key="SecondaryDarkText">#CBD5E1</Color>
+    <Color x:Key="Tertiary">#93C5FD</Color>
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="Magenta">#D600AA</Color>
+    <Color x:Key="MidnightBlue">#0F172A</Color>
+    <Color x:Key="OffBlack">#1E293B</Color>
+
+    <Color x:Key="Gray100">#E1E1E1</Color>
+    <Color x:Key="Gray200">#C8C8C8</Color>
+    <Color x:Key="Gray300">#ACACAC</Color>
+    <Color x:Key="Gray400">#919191</Color>
+    <Color x:Key="Gray500">#6E6E6E</Color>
+    <Color x:Key="Gray600">#404040</Color>
+    <Color x:Key="Gray900">#212121</Color>
+    <Color x:Key="Gray950">#141414</Color>
+
+    <Color x:Key="Gray100Accent">#F0F7FF</Color>
+    <Color x:Key="Gray200Accent">#DCEEFF</Color>
+    <Color x:Key="Gray300Accent">#BFDBFE</Color>
+    <Color x:Key="Gray400Accent">#93C5FD</Color>
+    <Color x:Key="Gray500Accent">#60A5FA</Color>
+    <Color x:Key="Gray600Accent">#3B82F6</Color>
+    <Color x:Key="Gray900Accent">#1D4ED8</Color>
+    <Color x:Key="Gray950Accent">#1E3A8A</Color>
+
+    <!-- Bizim özel tema anahtarları -->
+    <Color x:Key="PageBackgroundColor">#0F172A</Color>
+    <Color x:Key="CardBackgroundColor">#1E293B</Color>
+    <Color x:Key="PrimaryColor">#3B82F6</Color>
+    <Color x:Key="PrimaryLightColor">#60A5FA</Color>
+    <Color x:Key="TextColor">#F8FAFC</Color>
+    <Color x:Key="SecondaryTextColor">#CBD5E1</Color>
+    <Color x:Key="DangerColor">#EF4444</Color>
+    <Color x:Key="SuccessColor">#22C55E</Color>
+    <Color x:Key="BorderColor">#334155</Color>
+    <Color x:Key="EntryBackgroundColor">#172033</Color>
+</ResourceDictionary>

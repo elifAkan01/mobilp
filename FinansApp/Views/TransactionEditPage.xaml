@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinansApp.Views.TransactionEditPage"
+             Title="İşlem Ekle/Düzenle"
+             BackgroundColor="{AppThemeBinding Light=#F7F7FB, Dark=#1C1C1E}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
+
+            <Label Text="Açıklama"
+                   FontAttributes="Bold" />
+            <Entry x:Name="DescEntry"
+                   Placeholder="Örn: Mutfak alışverişi" />
+
+            <Label Text="Tutar"
+                   FontAttributes="Bold" />
+            <Entry x:Name="AmountEntry"
+                   Placeholder="Örn: 175"
+                   Keyboard="Numeric" />
+
+            <Label Text="Kategori"
+                   FontAttributes="Bold" />
+            <Picker x:Name="CategoryPicker"
+                    Title="Kategori Seç">
+                <Picker.Items>
+                    <x:String>Mutfak</x:String>
+                    <x:String>Kira</x:String>
+                    <x:String>Maaş</x:String>
+                    <x:String>Fatura</x:String>
+                    <x:String>Ulaşım</x:String>
+                    <x:String>Eğlence</x:String>
+                    <x:String>Diğer</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <HorizontalStackLayout Spacing="12">
+                <Label Text="Gelir mi?"
+                       VerticalOptions="Center"
+                       FontAttributes="Bold" />
+                <Switch x:Name="IncomeSwitch" />
+            </HorizontalStackLayout>
+
+            <Label Text="Tarih"
+                   FontAttributes="Bold" />
+            <DatePicker x:Name="TransDate" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Button Grid.Column="0"
+                        Text="Kaydet"
+                        Clicked="OnSaveClicked"
+                        BackgroundColor="#512BD4"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50" />
+
+                <Button Grid.Column="1"
+                        Text="İptal"
+                        Clicked="OnCancelClicked"
+                        BackgroundColor="#A0A0A0"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="50" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
