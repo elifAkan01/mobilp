@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|c:\\users\\elif7\\desktop\\mobilp\\kitarehberi\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|c:\\users\\elif7\\desktop\\mobilp\\kitarehberi\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|c:\\users\\elif7\\desktop\\mobilp\\kitarehberi\\models\\kita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|solutionrelative:models\\kita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|c:\\users\\elif7\\desktop\\mobilp\\kitarehberi\\kitarehberi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D11EC0A5-AD36-4096-98A2-685D6C2BA535}|KitaRehberi.csproj|solutionrelative:kitarehberi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAUwHYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T16:58:14.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAYwHUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T16:57:19.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Kita.cs",
+              "DocumentMoniker": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\Models\\Kita.cs",
+              "RelativeDocumentMoniker": "Models\\Kita.cs",
+              "ToolTip": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\Models\\Kita.cs",
+              "RelativeToolTip": "Models\\Kita.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T16:42:21.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KitaRehberi",
+              "DocumentMoniker": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\KitaRehberi.csproj",
+              "RelativeDocumentMoniker": "KitaRehberi.csproj",
+              "ToolTip": "C:\\Users\\elif7\\Desktop\\mobilp\\KitaRehberi\\KitaRehberi.csproj",
+              "RelativeToolTip": "KitaRehberi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-23T16:41:13.866Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

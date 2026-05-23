@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="KitaRehberi.MainPage"
+    BackgroundColor="#F3F4F6">
+
+    <VerticalStackLayout Padding="15" Spacing="15">
+
+        <!-- Başlık -->
+        <Label
+            Text="Kıta Rehberi"
+            FontSize="32"
+            FontAttributes="Bold"
+            TextColor="#111827"/>
+
+        <!-- Search -->
+        <SearchBar
+            x:Name="searchBar"
+            Placeholder="Kıta ara..."
+            SearchButtonPressed="searchBar_SearchButtonPressed"
+            BackgroundColor="White"/>
+
+        <!-- Liste -->
+        <CollectionView
+            x:Name="cvKitalar"
+            SelectionMode="Single"
+            SelectionChanged="cvKitalar_SelectionChanged">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <SwipeView>
+
+                        <!-- Swipe -->
+                        <SwipeView.RightItems>
+
+                            <SwipeItems Mode="Execute">
+
+                                <SwipeItem
+                                    Text="Favori"
+                                    BackgroundColor="Orange"
+                                    Invoked="Favori_Clicked"/>
+
+                            </SwipeItems>
+
+                        </SwipeView.RightItems>
+
+                        <!-- Kart -->
+                        <Border
+                            Margin="0,5"
+                            Padding="10"
+                            BackgroundColor="White"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 20">
+
+                            <Grid
+                                ColumnDefinitions="90,*"
+                                RowDefinitions="Auto,Auto,Auto"
+                                ColumnSpacing="15">
+
+                                <!-- Görsel -->
+                                <Border
+                                    Grid.RowSpan="3"
+                                    WidthRequest="90"
+                                    HeightRequest="90"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 15">
+
+                                    <Image
+                                        Source="{Binding Resim}"
+                                        Aspect="AspectFill"/>
+
+                                </Border>
+
+                                <!-- Ad -->
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding Ad}"
+                                    FontSize="22"
+                                    FontAttributes="Bold"
+                                    TextColor="#111827"/>
+
+                                <!-- Nüfus -->
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding Nufus, StringFormat='Nüfus: {0}'}"
+                                    FontSize="14"
+                                    TextColor="#6B7280"/>
+
+                                <!-- Açıklama -->
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Text="{Binding Aciklama}"
+                                    MaxLines="2"
+                                    LineBreakMode="TailTruncation"
+                                    FontSize="13"
+                                    TextColor="#4B5563"/>
+
+                            </Grid>
+
+                        </Border>
+
+                    </SwipeView>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
